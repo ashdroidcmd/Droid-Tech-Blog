@@ -10,7 +10,7 @@ return (
             <div className="container-fluid">
 
                 <Link className="navbar-brand text-white" to="/">
-                <img src="../public/images/logo.png" alt="logo"/>
+                <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="logo"/>
                 </Link>
 
                 <button className="navbar-toggler bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
