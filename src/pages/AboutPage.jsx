@@ -7,7 +7,7 @@ const AboutPage = () => {
   return (
     <main className="bg-custom-color d-flex flex-column min-vh-100 p-4">
         <section className="container text-white">
-            <h1>About</h1>
+            <h1>Aboutt</h1>
             <h2>Welcome to My Arduino Projects</h2>
             <p>Hello! I'm Ash, an electronics enthusiast and a passionate maker who loves building Arduino projects.</p>
                 
