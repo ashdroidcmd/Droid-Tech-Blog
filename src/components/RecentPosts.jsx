@@ -14,7 +14,7 @@ return (
                     <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${posts.slug}`}>  
                         <div className="row no-gutters ">
                             <div className="col-md-4 ">
-                                <img className="img-fluid rounded-3" src={`${process.env.PUBLIC_URL}/droid-blog-website/images/${posts.image[0]}`} alt={posts.title}/>
+                                <img className="img-fluid rounded-3" src={`/droid-blog-website/images/${posts.image[0]}`} alt={posts.title}/>
                             </div>
                             <div className="col-md-6">
                                 <div className="card-body">
