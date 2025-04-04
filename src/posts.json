@@ -6,8 +6,8 @@
       "date": "February 13, 2025 by Ash",
       "video": "https://www.youtube.com/watch?v=-_gYWeo8WIU",
       "image": [
-          "/public/images/4trafficlight.jpg",
-          "/public/images/4circuit.png"
+          "4trafficlight.jpg",
+          "4circuit.png"
           ],
       "content": "Controlling multiple LEDs with timed delays.",
       "components": [
@@ -40,8 +40,8 @@
       "date": "February 9, 2025 by Ash",
       "video": "https://www.youtube.com/watch?v=X1JNGUesn0c",
       "image": [
-          "/public/images/3otled.jpg",
-          "/public/images/3potdimmer circuit.png"
+          "3otled.jpg",
+          "3potdimmer circuit.png"
           ],
       "content": "This project lets you control the brightness of an LED using a potentiometer (variable resistor). It works by reading an analog input from the potentiometer and using PWM (Pulse Width Modulation) to adjust the LED brightness.",
       "components": [
@@ -77,8 +77,8 @@
         "date": "February 5, 2025 by Ash",
         "video": "https://www.youtube.com/watch?v=PVwC6J2V1BM",
         "image": [
-            "/public/images/2toggleswitch.jpg",
-            "/public/images/2circuit.png"
+            "2toggleswitch.jpg",
+            "2circuit.png"
             ],
         "content": "This project toggles the LED state each time the button is pressed.",
         "components": [
@@ -115,8 +115,8 @@
       "date": "February 2, 2025 by Ash",
       "video": "https://www.youtube.com/watch?v=88F5oAmwmRc",
       "image": [
-        "/public/images/1blinkled.jpg",
-        "/public/images/1circuit.png"
+        "1blinkled.jpg",
+        "1circuit.png"
         ],
       "content": "Turning on an LED with an Arduino is one of the simplest beginner projects.",
       "components": [
