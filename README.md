@@ -1,12 +1,49 @@
-# React + Vite
+# My Arduino Tech Blog
+Welcome to my personal tech blog where I share my Arduino projects, tutorials, and insights. This blog is built using React and provides a platform to share my experiments with electronics, coding, and IoT.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+Responsive Design: The blog is fully responsive, ensuring a smooth experience on both desktop and mobile devices.
 
-Currently, two official plugins are available:
+React Framework: Built with React for an interactive, dynamic user interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+HashRouter: For handling navigation in a single-page application (SPA) with URL hash-based routing.
 
-## Expanding the ESLint configuration
+Project Showcase: A dedicated section to showcase personal Arduino projects, including code snippets, wiring diagrams, and step-by-step guides.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Search and Filter: Easily search and filter through the various Arduino projects and blog posts.
+
+## Technologies Used
+React: A JavaScript library for building user interfaces, enabling a fast, dynamic web experience.
+
+HashRouter: Used for client-side routing, allowing navigation without full page reloads.
+
+Bootstrap CSS: A responsive, mobile-first CSS framework used to quickly design and customize the layout of the blog.
+
+## Usage
+Browse through various Arduino projects.
+
+Read tutorials and explore step-by-step guides for building circuits and writing code.
+
+Switch between articles and project pages using the app's navigation.
+
+The design is responsive and adjusts to different screen sizes.
+
+## Contact
+If you have any questions or want to discuss any of my projects, feel free to reach out to me:
+
+Email: ashgesite25@gmail.com
+
+GitHub: https://github.com/ashdroidcmd
+
+
+## Problems Encountered
+
+### 1. Issue with React Router after Deploying Github Pages
+Fixed with using Relacing Router with HashRouter
+
+### 2. Images won't Load after Deploying Github Pages
+Logo Image is not Loading - Put your images files in public/images/logo.png then use this structure of src="/droid-blog-website/images/logo.png" and apply changes and deploy
+
+Images of Each Projects are in json file - remove the /public/images in the json images file path leave only the name of the image ex. "2toggleswitch.jpg", and use this structure of src={`/droid-blog-website/images/${posts.image[0]}`} and apply changes and deploy
+
+You can also check in console when you get an error if the images are not loading. GET https://ashdroidcmd.github.io/droid-blog-website/images//public/images/2toggleswitch.jpg 404 (Not Found) The file paths are wrong thats why remove the /public/images in json file.
