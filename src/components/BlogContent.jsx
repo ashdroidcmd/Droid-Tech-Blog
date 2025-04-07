@@ -34,11 +34,15 @@ const BlogContent = () => {
   }, [slug]);
 
   if (loading) {
-    return <div>Loading...</div>; // Show loading message while fetching data
+    return <div className="vh-100">
+            <h1 className="text-center text-white my-5">Loading...</h1>
+          </div>;
   }
 
   if (!post) {
-    return <h2>Post not found</h2>; // Handle case where post is not found
+    return <div className="vh-100">
+            <h1 className="text-center text-white my-5">Page not found</h1>
+          </div>;
   }
 
   return (

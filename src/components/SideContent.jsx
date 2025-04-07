@@ -34,7 +34,7 @@ const SideContent = () => {
                 <img className="img-fluid rounded-3" src={`/Droid-Tech-Blog/images/${project.image[0]}`} alt={project.title} />
               </div>
               <div className="col-lg-6">
-                <h6 className="mb-0 text-white">{project.title}</h6>
+                <p className="mb-0 text-white">{project.title}</p>
                 <small className="secondary-text-color">{project.date}</small>
               </div>
             </Link>
