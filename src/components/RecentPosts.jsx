@@ -1,26 +1,46 @@
-import React from 'react'
-import Posts from '../posts.json'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { collection, query, orderBy, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 const RecentPosts = ({ isHome = false }) => {
-    const projects = isHome ? Posts.slice(0, 3) : Posts;
-    // console.log(projects)
+const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+    const fetchProjects = async () => {
+      // Fetch projects ordered by "id" in ascending order
+    const q = query(collection(db, "projects"), orderBy("id", "desc"));
+    const querySnapshot = await getDocs(q);
+
+      // Map over the documents and extract the data
+    const projectData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+      // Set the projects state with the fetched data
+    setProjects(projectData);
+    };
+
+    fetchProjects();
+}, []);
+
+    // If it's the home page, slice the projects to show only the most recent ones
+    const displayedProjects = isHome ? projects.slice(0, 3) : projects;
+
 return (
     <section className="container">
         <h1 className="text-white my-4">{isHome ? "Recent Projects" : "All Projects"}</h1>
-        {projects.map((posts) => (
-            <li className="list-group-item my-3" key={posts.id}>
+        {displayedProjects.map((projects) => (
+            <li className="list-group-item my-3" key={projects.id}>
                 <div className="card border-primary recent-projects">
-                    <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${posts.slug}`}>  
+                    <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>  
                         <div className="row no-gutters ">
                             <div className="col-md-4 ">
-                                <img className="img-fluid rounded-3" src={`/Droid-Tech-Blog/images/${posts.image[0]}`} alt={posts.title}/>
+                                <img className="img-fluid rounded-3" src={`/Droid-Tech-Blog/images/${projects.image[0]}`} alt={projects.title}/>
                             </div>
                             <div className="col-md-6">
                                 <div className="card-body">
-                                    <h5 className="card-title text-white">{posts.title}</h5>
-                                    <p className="card-text "><small className="secondary-text-color">{posts.date}</small></p>
-                                    <p className="card-text mb-0 text-white">{posts.content}</p>
+                                    <h5 className="card-title text-white">{projects.title}</h5>
+                                    <p className="card-text "><small className="secondary-text-color">{projects.date}</small></p>
+                                    <p className="card-text mb-0 text-white">{projects.content}</p>
                                 </div>
                             </div>
                         </div>

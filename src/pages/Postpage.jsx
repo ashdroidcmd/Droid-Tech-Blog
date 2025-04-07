@@ -7,7 +7,7 @@ const ProjectPage = () => {
 return (
     <>
     <section className="bg-custom-color">
-        <div className="container-fluid">   
+        <div className="container">   
             <div className="row g-2">
                 <div className="col-md-9">
                     <BlogContent />

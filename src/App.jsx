@@ -6,9 +6,13 @@ import ProjectsPage from './pages/ProjectPage';
 import AboutPage from './pages/AboutPage';
 import ResourcesPage from './pages/ResourcesPage';
 import Postpage from './pages/Postpage';
+// import AddProject from './pages/AddProject'
 
 function App() {
   return (
+    // <>
+    // <AddProject />
+    // </>
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
