@@ -28,7 +28,7 @@ const AddExample = () => {
           "ECHO → Pin 8"
         ]
       },
-      "code": "\nonst int trigPin = 9;\nconst int echoPin = 8;\nlong duration;\nint distance;\n\nvoid setup() {  \n   pinMode(trigPin, OUTPUT);  \n   pinMode(echoPin, INPUT);  \n   Serial.begin(9600);\n}\n\nvoid loop() {  \n   // Send a 10us HIGH pulse to trigger the sensor  \n   digitalWrite(trigPin, LOW);  \n   delayMicroseconds(2);  \n   digitalWrite(trigPin, HIGH);  \n   delayMicroseconds(10);  \n   digitalWrite(trigPin, LOW);  \n\n   // Measure the echo time  \n   duration = pulseIn(echoPin, HIGH);  \n\n   // Convert duration to distance (in cm)  \n   distance = duration * 0.034 / 2;  \n\n   Serial.print(distance);  \n\ndelay(100);\n}",
+      "code": "\nconst int trigPin = 9;\nconst int echoPin = 8;\nlong duration;\nint distance;\n\nvoid setup() {  \n   pinMode(trigPin, OUTPUT);  \n   pinMode(echoPin, INPUT);  \n   Serial.begin(9600);\n}\n\nvoid loop() {  \n   // Send a 10us HIGH pulse to trigger the sensor  \n   digitalWrite(trigPin, LOW);  \n   delayMicroseconds(2);  \n   digitalWrite(trigPin, HIGH);  \n   delayMicroseconds(10);  \n   digitalWrite(trigPin, LOW);  \n\n   // Measure the echo time  \n   duration = pulseIn(echoPin, HIGH);  \n\n   // Convert duration to distance (in cm)  \n   distance = duration * 0.034 / 2;  \n\n   Serial.print(distance);  \n\ndelay(100);\n}",
       "explanation":[
         "This sends a 10 microsecond pulse to trigger the ultrasonic sensor",
         "pulseIn() measures how long the echo pin stays HIGH (in microseconds)",

@@ -5,9 +5,9 @@ import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 
 const BlogContent = () => {
-  const { slug } = useParams(); // Get the slug from the URL
-  const [post, setPost] = useState(null); // State to store post data
-  const [loading, setLoading] = useState(true); // Loading state
+  const { slug } = useParams();
+  const [post, setPost] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -18,15 +18,15 @@ const BlogContent = () => {
 
         if (querySnapshot.empty) {
           console.log("No post found with that slug");
-          setPost(null); // Set to null if no post found
+          setPost(null);
         } else {
-          const postData = querySnapshot.docs[0].data(); // Get the first matching document
-          setPost(postData); // Update the state with the post data
+          const postData = querySnapshot.docs[0].data();
+          setPost(postData);
         }
       } catch (error) {
         console.error("Error fetching post:", error);
       } finally {
-        setLoading(false); // Stop loading once data is fetched
+        setLoading(false);
       }
     };
 
@@ -52,12 +52,10 @@ const BlogContent = () => {
           <h2 className="fw-bolder mb-2 mt-5">{post.title}</h2>
           <p className="secondary-text-color">{post.date}</p>
 
-          {/* Video Link */}
           <div className="ratio ratio-16x9 mb-4">
             <ReactPlayer className="w-100 h-100" url={post.video} controls={true}/>
           </div>
 
-          {/* Description */}
           <p>{post.content}</p>
           <p>Here’s how you can do it:</p>
 

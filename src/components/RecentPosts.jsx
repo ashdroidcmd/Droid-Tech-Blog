@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import { Link } from 'react-router-dom';
 import { collection, query, orderBy, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
@@ -8,21 +9,18 @@ const [projects, setProjects] = useState([]);
 
     useEffect(() => {
     const fetchProjects = async () => {
-      // Fetch projects ordered by "id" in ascending order
     const q = query(collection(db, "projects"), orderBy("id", "desc"));
     const querySnapshot = await getDocs(q);
 
-      // Map over the documents and extract the data
     const projectData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-      // Set the projects state with the fetched data
     setProjects(projectData);
     };
 
     fetchProjects();
 }, []);
 
-    // If it's the home page, slice the projects to show only the most recent ones
+    // If it's the home page, show only 3 projects
     const displayedProjects = isHome ? projects.slice(0, 3) : projects;
 
 return (
