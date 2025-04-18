@@ -1,4 +1,4 @@
-# My Arduino Tech Blog
+# Droid
 Welcome to my personal tech blog where I share my Arduino projects, tutorials, and insights. This blog is built using React and provides a platform to share my experiments with electronics, coding, and IoT.
 
 ## Features
@@ -21,7 +21,7 @@ Welcome to my personal tech blog where I share my Arduino projects, tutorials, a
 
 ## Contact
 If you have any questions or want to discuss any of my projects, feel free to reach out to me:
-- Email: ashgesite25@gmail.com
+- Email: z.wolff25@gmail.com
 - GitHub: https://github.com/ashdroidcmd
 
 
