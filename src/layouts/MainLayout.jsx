@@ -8,11 +8,13 @@ import React from 'react'
 const MainLayout = () => {
   return (
     <>
-    <main className="bg-custom-color">
+    <div className="d-flex flex-column min-vh-100">
       <Navbar />
-      <Outlet />
+      <main className="bg-custom-color flex-grow-1">
+        <Outlet />
+      </main>
       <Footer />
-    </main>
+    </div>
     </>
   )
 }

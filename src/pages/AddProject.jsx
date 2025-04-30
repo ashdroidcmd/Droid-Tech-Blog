@@ -10,9 +10,9 @@ const AddExample = () => {
       "date": "February March 8, 2025 by Ash",
       "video": "https://www.youtube.com/watch?v=-_gYWeo8WIU",
       "image": [
-          "4trafficlight.jpg",
-          "4circuit.png"
-          ],
+        "4trafficlight.jpg",
+        "4circuit.png"
+      ],
       "content": "The Ultrasonic Distance Sensor (usually the HC-SR04) is a great project that teaches you how to measure distance using sound waves.",
       "components": [
         "Arduino board (Uno, Mega, etc.)",
@@ -29,7 +29,7 @@ const AddExample = () => {
         ]
       },
       "code": "\nconst int trigPin = 9;\nconst int echoPin = 8;\nlong duration;\nint distance;\n\nvoid setup() {  \n   pinMode(trigPin, OUTPUT);  \n   pinMode(echoPin, INPUT);  \n   Serial.begin(9600);\n}\n\nvoid loop() {  \n   // Send a 10us HIGH pulse to trigger the sensor  \n   digitalWrite(trigPin, LOW);  \n   delayMicroseconds(2);  \n   digitalWrite(trigPin, HIGH);  \n   delayMicroseconds(10);  \n   digitalWrite(trigPin, LOW);  \n\n   // Measure the echo time  \n   duration = pulseIn(echoPin, HIGH);  \n\n   // Convert duration to distance (in cm)  \n   distance = duration * 0.034 / 2;  \n\n   Serial.print(distance);  \n\ndelay(100);\n}",
-      "explanation":[
+      "explanation": [
         "This sends a 10 microsecond pulse to trigger the ultrasonic sensor",
         "pulseIn() measures how long the echo pin stays HIGH (in microseconds)",
         "This is the time it took for the sound to go to the object and return",

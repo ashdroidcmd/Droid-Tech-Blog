@@ -10,14 +10,14 @@ const SideContent = () => {
     const fetchProjects = async () => {
       const q = query(collection(db, "projects"), orderBy("id", "desc"));
       const querySnapshot = await getDocs(q);
-      
+
       const projectData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
       setProjects(projectData);
     };
 
     fetchProjects();
-  }, []); 
+  }, []);
 
   return (
     <aside className="mt-5">

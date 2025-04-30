@@ -35,14 +35,14 @@ const BlogContent = () => {
 
   if (loading) {
     return <div className="vh-100">
-            <h1 className="text-center text-white my-5">Loading...</h1>
-          </div>;
+      <h1 className="text-center text-white my-5">Loading...</h1>
+    </div>;
   }
 
   if (!post) {
     return <div className="vh-100">
-            <h1 className="text-center text-white my-5">Page not found</h1>
-          </div>;
+      <h1 className="text-center text-white my-5">Page not found</h1>
+    </div>;
   }
 
   return (
@@ -53,7 +53,7 @@ const BlogContent = () => {
           <p className="secondary-text-color">{post.date}</p>
 
           <div className="ratio ratio-16x9 mb-4">
-            <ReactPlayer className="w-100 h-100" url={post.video} controls={true}/>
+            <ReactPlayer className="w-100 h-100" url={post.video} controls={true} />
           </div>
 
           <p>{post.content}</p>

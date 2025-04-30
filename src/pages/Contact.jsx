@@ -1,11 +1,16 @@
 import React from 'react'
+import EmailContact from '../components/EmailContact'
+import ContactDetails from '../components/ContactDetails'
 
 const Contact = () => {
-return (
-    <div className="vh-100 container">
-        <h1 className="my-5 py-5 text-white text-center">Coming Soon</h1>
-    </div>
-)
+    return (
+        <div className="container px-5 py-5">
+            <div className="row">
+                <ContactDetails />
+                <EmailContact />
+            </div>
+        </div>
+    )
 }
 
 export default Contact

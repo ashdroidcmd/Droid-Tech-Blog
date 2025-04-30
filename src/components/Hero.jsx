@@ -21,45 +21,45 @@ import { db } from "../firebase";
 const Hero = () => {
   const [projects, setProjects] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchProjects = async () => {
-    const q = query(collection(db, "projects"), orderBy("id", "desc"));
-    const querySnapshot = await getDocs(q);
+      const q = query(collection(db, "projects"), orderBy("id", "desc"));
+      const querySnapshot = await getDocs(q);
 
-    const projectData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const projectData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-    setProjects(projectData);
+      setProjects(projectData);
     };
 
     fetchProjects();
-}, []);
+  }, []);
 
-    // If it's the home page, show only 3 projects
-    const displayedProjects = projects.slice(0, 4);
+  // If it's the home page, show only 3 projects
+  const displayedProjects = projects.slice(0, 4);
   return (
     <section>
       <div className="container">
         <div className="row py-5">
           <div className="col-lg-8">
-            <Swiper 
-            navigation={true} 
-            modules={[Navigation]} 
-            className="mySwiper">
-                <SwiperSlide>
-                  <img src="/Droid-Tech-Blog/images/1blinkled.jpg" className="img-fluid"/>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="/Droid-Tech-Blog/images/2toggleswitch.jpg" className="img-fluid"/>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="/Droid-Tech-Blog/images/3otled.jpg" className="img-fluid"/>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="/Droid-Tech-Blog/images/4trafficlight.jpg" className="img-fluid"/>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="/Droid-Tech-Blog/images/5ldr.png" className="img-fluid"/>
-                </SwiperSlide>
+            <Swiper
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper">
+              <SwiperSlide>
+                <img src="/Droid-Tech-Blog/images/1blinkled.jpg" className="img-fluid" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/Droid-Tech-Blog/images/2toggleswitch.jpg" className="img-fluid" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/Droid-Tech-Blog/images/3otled.jpg" className="img-fluid" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/Droid-Tech-Blog/images/4trafficlight.jpg" className="img-fluid" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src="/Droid-Tech-Blog/images/5ldr.png" className="img-fluid" />
+              </SwiperSlide>
             </Swiper>
           </div>
 
@@ -68,19 +68,19 @@ const Hero = () => {
             <h2 className="text-white">Latest Posts</h2>
             {displayedProjects.map((projects) => (
               <li className="list-group-item my-2" key={projects.id}>
-                  <div className="recent-projects">
-                    <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>  
-                      <div className="row">
-                        <div className="col-5 ">
-                          <img className="img-fluid rounded-3 ps-0" src={`/Droid-Tech-Blog/images/${projects.image[0]}`} alt={projects.title}/>
-                        </div>
-                        <div className="col-7 py-3 px-0">
-                          <h6 className="text-white ">{projects.title}</h6>
-                        </div>
+                <div className="recent-projects">
+                  <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>
+                    <div className="row">
+                      <div className="col-5 ">
+                        <img className="img-fluid rounded-3 ps-0" src={`/Droid-Tech-Blog/images/${projects.image[0]}`} alt={projects.title} />
                       </div>
-                    </Link>
-                  </div>
-                </li>
+                      <div className="col-7 py-3 px-0">
+                        <h6 className="text-white ">{projects.title}</h6>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              </li>
             ))}
           </div>
         </div>
