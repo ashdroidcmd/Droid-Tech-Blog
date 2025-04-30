@@ -20,16 +20,19 @@ return (
                 <div className="collapse navbar-collapse" id="navbarsExample09">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                    <Link className="nav-link text-white fw-bolder" to="/">HOME</Link>
+                    <Link className="nav-link text-white fw-bolder fs-5" to="/">HOME</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link text-white fw-bolder" to="/projects">PROJECTS</Link>
+                    <Link className="nav-link text-white fw-bolder fs-5" to="/projects">PROJECTS</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link text-white fw-bolder" to="/about">ABOUT</Link>
+                    <Link className="nav-link text-white fw-bolder fs-5" to="/about">ABOUT</Link>
                     </li>
                     <li className="nav-item">
-                    <Link className="nav-link text-white fw-bolder" to="/resources">RESOURCES</Link>
+                    <Link className="nav-link text-white fw-bolder fs-5" to="/resources">RESOURCES</Link>
+                    </li>
+                    <li className="nav-item">
+                    <Link className="nav-link text-white fw-bolder fs-5" to="/contact">CONTACT</Link>
                     </li>
                 </ul>
                 </div>

@@ -7,6 +7,7 @@ import AboutPage from './pages/AboutPage';
 import ResourcesPage from './pages/ResourcesPage';
 import Postpage from './pages/Postpage';
 import ScrollToTop from './components/ScrollToTop';
+import Contact from './pages/Contact';
 // import AddProject from './pages/AddProject'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/posts/:slug" element={<Postpage />} />
+            <Route path="/contact" element={<Contact />} />
           </Route>
         </Routes>
     </Router>

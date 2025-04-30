@@ -11,41 +11,42 @@ const [projects, setProjects] = useState([]);
     const fetchProjects = async () => {
     const q = query(collection(db, "projects"), orderBy("id", "desc"));
     const querySnapshot = await getDocs(q);
-
     const projectData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-
     setProjects(projectData);
     };
-
     fetchProjects();
 }, []);
 
-    // If it's the home page, show only 3 projects
-    const displayedProjects = isHome ? projects.slice(0, 3) : projects;
+    // Show only 4 projects
+    const displayedProjects = (isHome 
+        ? projects.filter(p => p.tags && p.tags.includes("arduino")).slice(0, 4)
+        : projects.filter(p => p.tags && p.tags.includes("arduino"))
+    );
 
 return (
-    <section className="container">
-        <h1 className="text-white my-4">{isHome ? "Recent Projects" : "All Projects"}</h1>
-        {displayedProjects.map((projects) => (
-            <li className="list-group-item my-3" key={projects.id}>
-                <div className="card border-primary recent-projects">
-                    <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>  
-                        <div className="row no-gutters ">
-                            <div className="col-md-4 ">
-                                <img className="img-fluid rounded-3" src={`/Droid-Tech-Blog/images/${projects.image[0]}`} alt={projects.title}/>
-                            </div>
-                            <div className="col-md-6">
-                                <div className="card-body">
-                                    <h5 className="card-title text-white">{projects.title}</h5>
-                                    <p className="card-text "><small className="secondary-text-color">{projects.date}</small></p>
-                                    <p className="card-text mb-0 text-white">{projects.content}</p>
-                                </div>
-                            </div>
+    <section className="container my-4">
+        <h1 className="text-white ">{isHome ? "Arduino" : "Arduino"}</h1>
+        <div className="row row-cols-1 row-cols-md-4 g-2">
+            {displayedProjects.map((project) => (
+                <div className="col" key={project.id}>
+                    <div className="border border-primary recent-projects h-100 bg-custom-color2 ">
+                        <Link
+                        className="text-decoration-none recent-projects"
+                        to={`/posts/${project.slug}`}
+                        >
+                        <img
+                            className="img-fluid rounded-3"
+                            src={`/Droid-Tech-Blog/images/${project.image[0]}`}
+                            alt={project.title}
+                        />
+                        <div className="p-3">
+                            <h6 className="text-white">{project.title}</h6>
                         </div>
-                    </Link>
+                        </Link>
+                    </div>
                 </div>
-            </li>
-))}
+            ))}
+        </div>
     </section>
 )
 }

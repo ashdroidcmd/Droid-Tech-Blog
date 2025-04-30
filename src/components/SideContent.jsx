@@ -32,7 +32,6 @@ const SideContent = () => {
               </div>
               <div className="col-lg-6">
                 <p className="mb-0 text-white">{project.title}</p>
-                <small className="secondary-text-color">{project.date}</small>
               </div>
             </Link>
           </li>
