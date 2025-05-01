@@ -1,4 +1,5 @@
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react"
 import './App.css';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
@@ -25,6 +26,7 @@ function App() {
             <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/posts/:slug" element={<Postpage />} />
             <Route path="/contact" element={<Contact />} />
+            <Analytics />
           </Route>
         </Routes>
     </Router>
