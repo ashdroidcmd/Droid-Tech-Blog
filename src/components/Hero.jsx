@@ -46,19 +46,19 @@ const Hero = () => {
               modules={[Navigation]}
               className="mySwiper">
               <SwiperSlide>
-                <img src="/Droid-Tech-Blog/images/1blinkled.jpg" className="img-fluid" />
+                <img src="/images/1blinkled.jpg" className="img-fluid" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/Droid-Tech-Blog/images/2toggleswitch.jpg" className="img-fluid" />
+                <img src="/images/2toggleswitch.jpg" className="img-fluid" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/Droid-Tech-Blog/images/3otled.jpg" className="img-fluid" />
+                <img src="/images/3otled.jpg" className="img-fluid" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/Droid-Tech-Blog/images/4trafficlight.jpg" className="img-fluid" />
+                <img src="/images/4trafficlight.jpg" className="img-fluid" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/Droid-Tech-Blog/images/5ldr.png" className="img-fluid" />
+                <img src="/images/5ldr.png" className="img-fluid" />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -72,7 +72,7 @@ const Hero = () => {
                   <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>
                     <div className="row">
                       <div className="col-5 ">
-                        <img className="img-fluid rounded-3 ps-0" src={`/Droid-Tech-Blog/images/${projects.image[0]}`} alt={projects.title} />
+                        <img className="img-fluid rounded-3 ps-0" src={`/images/${projects.image[0]}`} alt={projects.title} />
                       </div>
                       <div className="col-7 py-3 px-0">
                         <h6 className="text-white ">{projects.title}</h6>
