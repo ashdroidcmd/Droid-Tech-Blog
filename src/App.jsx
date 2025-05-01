@@ -13,22 +13,19 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    // <>
-    // <AddProject />
-    // </>
     <Router>
       <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<MainLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-            <Route path="/posts/:slug" element={<Postpage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Analytics />
-          </Route>
-        </Routes>
+      <Analytics /> {/* ✅ Place this outside Routes */}
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/posts/:slug" element={<Postpage />} />
+          <Route path="/contact" element={<Contact />} />
+        </Route>
+      </Routes>
     </Router>
   );
 }
