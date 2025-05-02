@@ -67,7 +67,7 @@ const BlogContent = () => {
           </ul>
 
           <h4>Wiring Diagram</h4>
-          <img className="img-fluid" src={`${import.meta.env.BASE_URL}/images/${post.image[1]}`} alt="Wiring Diagram" />
+          <img className="img-fluid" src={`${import.meta.env.BASE_URL}images/${post.image[1]}`} alt="Wiring Diagram" />
 
           {post.diagram && Object.entries(post.diagram).map(([category, steps], index) => (
             <div className="mt-3" key={index}>
