@@ -71,7 +71,7 @@ const Hero = () => {
                   <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>
                     <div className="row">
                       <div className="col-5 ">
-                        <img className="img-fluid rounded-3 ps-0" src={`${import.meta.env.BASE_URL}/images/${projects.image[0]}`} alt={projects.title} />
+                        <img className="img-fluid rounded-3 ps-0" src={`${import.meta.env.BASE_URL}images/${projects.image[0]}`} alt={projects.title} />
                       </div>
                       <div className="col-7 py-3 px-0">
                         <h6 className="text-white ">{projects.title}</h6>
