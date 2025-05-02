@@ -36,7 +36,7 @@ const RecentPosts = ({ isHome = false }) => {
                             >
                                 <img
                                     className="img-fluid rounded-3"
-                                    src={`/images/${project.image[0]}`}
+                                    src={`${import.meta.env.BASE_URL}/images/${project.image[0]}`}
                                     alt={project.title}
                                 />
                                 <div className="p-3">

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import './App.css';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
@@ -13,9 +14,10 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Droid-Tech-Blog">
       <ScrollToTop />
-      <Analytics /> {/* ✅ Place this outside Routes */}
+      <Analytics />
+      <SpeedInsights />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />

@@ -45,21 +45,20 @@ const Hero = () => {
               navigation={true}
               modules={[Navigation]}
               className="mySwiper">
-              <SwiperSlide>
-                <img src="/images/1blinkled.jpg" className="img-fluid" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/2toggleswitch.jpg" className="img-fluid" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/3otled.jpg" className="img-fluid" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/4trafficlight.jpg" className="img-fluid" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/images/5ldr.png" className="img-fluid" />
-              </SwiperSlide>
+              {projects.map((projects) => (
+                <SwiperSlide key={projects.id}>
+                  <Link className="text-decoration-none " to={`/posts/${projects.slug}`}>
+                    <div className="slide-content text-white recent-projects p-1">
+                      <img
+                        src={`${import.meta.env.BASE_URL}images/${projects.image[0]}`}
+                        className="img-fluid rounded-2"
+                        alt={projects.title}
+                      />
+                      <h3>{projects.title}</h3>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
 
@@ -72,7 +71,7 @@ const Hero = () => {
                   <Link className="text-decoration-none bg-custom-color2 recent-projects" to={`/posts/${projects.slug}`}>
                     <div className="row">
                       <div className="col-5 ">
-                        <img className="img-fluid rounded-3 ps-0" src={`/images/${projects.image[0]}`} alt={projects.title} />
+                        <img className="img-fluid rounded-3 ps-0" src={`${import.meta.env.BASE_URL}/images/${projects.image[0]}`} alt={projects.title} />
                       </div>
                       <div className="col-7 py-3 px-0">
                         <h6 className="text-white ">{projects.title}</h6>
