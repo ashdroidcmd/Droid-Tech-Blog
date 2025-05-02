@@ -14,7 +14,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/Droid-Tech-Blog">
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <ScrollToTop />
       <Analytics />
       <SpeedInsights />
@@ -28,7 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
